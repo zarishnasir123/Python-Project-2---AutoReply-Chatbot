@@ -3,12 +3,12 @@ import re
 from groq import Groq
 from api_key import GROQ_API_KEY
 
-MY_NAME = "زَرِش" # زَرِش, your name as whatsapp writes it in the copied chat
+MY_NAME = "زَرِش" 
 
 client = Groq(api_key=GROQ_API_KEY) # groq client with the key from api_key.py
 
 def is_last_message_from_other(chat): # check if the last message in the chat is from the other person
-    senders = re.findall(r"^\[[^\]]+\] ([^:]+): ", chat, flags=re.MULTILINE) # names from lines like [8:08 PM, 10/2/2026] UMER AWAN: hi
+    senders = re.findall(r"^\[[^\]]+\] ([^:]+): ", chat, flags=re.MULTILINE) 
     return len(senders) > 0 and senders[-1] != MY_NAME
 
 # who zarish is and how she texts, the ai reads this before every reply
@@ -41,7 +41,7 @@ def get_reply(chat): # send the chat history to the ai and get zarish's next mes
     )
     reply = completion.choices[0].message.content.strip()
     reply = re.sub(r"\b(mummy|mummi|mommy)\b", "mama", reply, flags=re.IGNORECASE) # zarish says mama
-    if random.random() < 0.5: # zarish does not use an emoji every time
+    if random.random() < 0.5: 
         reply = remove_emoji(reply)
     return reply
  

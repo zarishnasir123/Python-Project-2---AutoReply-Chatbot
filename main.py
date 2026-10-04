@@ -72,3 +72,4 @@ while True: # keep checking the chat and reply every time the other person write
             pyautogui.press('enter') # send the reply
 
     time.sleep(10) # wait before checking the chat again
+ 
