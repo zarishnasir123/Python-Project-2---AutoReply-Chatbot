@@ -86,11 +86,6 @@ To stop the bot, push the mouse into the top-left corner of the screen, or click
 
 The personality lives in `PROMPT` in `bot.py`. It sets the language (English or Roman Urdu, whichever the chat is using), the tone, when an emoji is allowed, and which words to use. Edit that text to change how the bot talks.
 
-Two rules are applied in code after the AI answers, because the model did not follow them reliably on its own:
-
-- The emoji is removed from half of the replies, picked at random.
-- "mummy" is replaced with "mama".
-
 The model is set in `get_reply` in `bot.py` (`openai/gpt-oss-120b`). Groq changes its list of models over time. If the bot prints a model error, choose a current model in the Groq console and put its name there.
 
 ## Limitations
